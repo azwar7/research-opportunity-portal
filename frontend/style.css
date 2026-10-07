@@ -1,0 +1,13 @@
+:root { --accent: #1e3a8a; }
+body { background: #f4f6fb; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+.portal-nav { background: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); }
+.btn-primary:hover { background: #172e6e; border-color: #172e6e; }
+.stat { background: #fff; border-radius: .6rem; padding: .9rem 1.1rem; border: 1px solid #e3e7f1; }
+.stat-num { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
+.opp-card { background: #fff; border: 1px solid #e3e7f1; border-radius: .6rem; height: 100%; display: flex; flex-direction: column; }
+.opp-card.is-closed { background: #fafafa; }
+.opp-card h2 { font-size: 1.05rem; font-weight: 600; }
+.clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.skill { display: inline-block; background: #e8edfb; color: var(--accent); border-radius: .3rem; padding: .1rem .5rem; font-size: .8rem; margin: 0 .25rem .25rem 0; }
+.overdue { color: #b45309; font-weight: 600; }
