@@ -1,0 +1,301 @@
+{
+  "info": {
+    "_postman_id": "420fd7fd-259c-4b39-bc04-38b33b03ce74",
+    "name": "Research Opportunity Portal",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58848504",
+    "_collection_link": "https://go.postman.co/collection/58848504-420fd7fd-259c-4b39-bc04-38b33b03ce74?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"AI-Based Crop Disease Detection\",\r\n  \"description\": \"Build a machine learning model to detect crop diseases from leaf images.\",\r\n  \"research_area\": \"Machine Learning\",\r\n  \"faculty_name\": \"Dr. Ayesha Khan\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, TensorFlow, Image Processing\",\r\n  \"positions\": 3,\r\n  \"deadline\": \"2026-12-15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "1b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Renewable Energy Grid Optimization\",\r\n  \"description\": \"Study smart grid strategies for integrating solar power.\",\r\n  \"research_area\": \"Energy Systems\",\r\n  \"faculty_name\": \"Dr. Imran Ali\",\r\n  \"department\": \"Electrical Engineering\",\r\n  \"required_skills\": \"MATLAB, Power Systems\",\r\n  \"positions\": 2,\r\n  \"deadline\": \"2026-11-30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "1c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Urdu Sentiment Analysis\",\r\n  \"description\": \"Create a dataset and model for sentiment analysis of Urdu social media text.\",\r\n  \"research_area\": \"Natural Language Processing\",\r\n  \"faculty_name\": \"Dr. Sana Rehman\",\r\n  \"department\": \"Computer Science\",\r\n  \"required_skills\": \"Python, NLP, Data Cleaning\",\r\n  \"positions\": 4,\r\n  \"deadline\": \"2027-01-20\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"AI-Based Crop Disease Detection (Updated)\",\r\n  \"positions\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"Closed\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities/3",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities/3",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"\",\r\n  \"positions\": -2,\r\n  \"deadline\": \"not-a-date\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/api/opportunities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
