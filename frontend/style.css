@@ -1,13 +1,22 @@
-:root { --accent: #1e3a8a; }
-body { background: #f4f6fb; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
-.portal-nav { background: var(--accent); }
-.btn-primary { background: var(--accent); border-color: var(--accent); }
-.btn-primary:hover { background: #172e6e; border-color: #172e6e; }
-.stat { background: #fff; border-radius: .6rem; padding: .9rem 1.1rem; border: 1px solid #e3e7f1; }
-.stat-num { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
-.opp-card { background: #fff; border: 1px solid #e3e7f1; border-radius: .6rem; height: 100%; display: flex; flex-direction: column; }
-.opp-card.is-closed { background: #fafafa; }
-.opp-card h2 { font-size: 1.05rem; font-weight: 600; }
+/* Research Opportunity Portal styles */
+:root { --navy: #172554; --indigo: #4f46e5; --line: #e2e8f0; }
+body { background: #f8fafc; color: #1e293b; font-family: "Inter", "Segoe UI", system-ui, sans-serif; }
+.portal-nav { background: var(--navy); }
+.text-primary { color: var(--indigo) !important; }
+.btn-primary { --bs-btn-bg: var(--indigo); --bs-btn-border-color: var(--indigo); --bs-btn-hover-bg: #4338ca; --bs-btn-hover-border-color: #4338ca; --bs-btn-active-bg: #3730a3; --bs-btn-active-border-color: #3730a3; }
+.btn-outline-primary { --bs-btn-color: var(--indigo); --bs-btn-border-color: #c7d2fe; --bs-btn-hover-bg: var(--indigo); --bs-btn-hover-border-color: var(--indigo); --bs-btn-active-bg: #4338ca; --bs-btn-active-border-color: #4338ca; }
+.form-control:focus, .form-select:focus { border-color: var(--indigo); box-shadow: 0 0 0 .2rem rgba(79, 70, 229, .2); }
+.stat { background: #fff; border-radius: .75rem; padding: 1rem 1.25rem; border: 1px solid var(--line); }
+.stat-num { font-size: 1.9rem; font-weight: 800; line-height: 1.1; }
+.opp-card { background: #fff; border: 1px solid var(--line); border-radius: .75rem; height: 100%; display: flex; flex-direction: column; transition: box-shadow .15s; }
+.opp-card:hover { box-shadow: 0 4px 10px rgba(15, 23, 42, .08); }
+.opp-card.is-closed { background: #fcfcfd; }
+.opp-card h2 { font-size: 1.05rem; font-weight: 700; color: #0f172a; }
 .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.skill { display: inline-block; background: #e8edfb; color: var(--accent); border-radius: .3rem; padding: .1rem .5rem; font-size: .8rem; margin: 0 .25rem .25rem 0; }
+.skill { display: inline-block; background: #eef2ff; color: var(--indigo); border: 1px solid #e0e7ff; border-radius: .3rem; padding: .1rem .5rem; font-size: .8rem; font-weight: 500; margin: 0 .25rem .25rem 0; }
+.status { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .55rem; border-radius: .3rem; font-size: .78rem; font-weight: 500; }
+.status::before { content: ""; width: .4rem; height: .4rem; border-radius: 50%; background: currentColor; }
+.status-open { background: #ecfdf5; color: #059669; }
+.status-closed { background: #f1f5f9; color: #475569; }
 .overdue { color: #b45309; font-weight: 600; }
+.offcanvas { width: 430px !important; max-width: 100vw; }

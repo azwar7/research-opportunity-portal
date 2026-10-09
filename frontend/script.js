@@ -5,6 +5,7 @@ let pending = null; // { type: "close" | "delete", item }
 
 const $ = (id) => document.getElementById(id);
 const modal = (id) => bootstrap.Modal.getOrCreateInstance($(id));
+const panel = () => bootstrap.Offcanvas.getOrCreateInstance($("detailsPanel"));
 
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -50,6 +51,7 @@ async function load() {
   $("grid").innerHTML = "";
   try {
     items = await api();
+    fillAreas();
     render();
   } catch (e) {
     items = [];
@@ -59,6 +61,15 @@ async function load() {
   } finally {
     $("loading").classList.add("d-none");
   }
+}
+
+function fillAreas() {
+  const sel = $("areaFilter");
+  const current = sel.value;
+  const areas = [...new Set(items.map((i) => i.research_area))].sort();
+  sel.innerHTML = '<option value="All">All research areas</option>' +
+    areas.map((a) => `<option value="${esc(a)}">${esc(a)}</option>`).join("");
+  sel.value = areas.includes(current) ? current : "All";
 }
 
 function updateStats() {
@@ -80,9 +91,11 @@ function render() {
   updateStats();
   const q = $("search").value.toLowerCase().trim();
   const f = $("filter").value;
+  const a = $("areaFilter").value;
   const shown = items.filter((i) =>
     (f === "All" || i.status === f) &&
-    (!q || [i.title, i.faculty_name, i.department, i.research_area].some((v) => String(v).toLowerCase().includes(q)))
+    (a === "All" || i.research_area === a) &&
+    (!q || [i.title, i.faculty_name, i.department, i.research_area, i.required_skills].some((v) => String(v).toLowerCase().includes(q)))
   );
 
   $("grid").innerHTML = shown.map((i) => `
@@ -90,7 +103,7 @@ function render() {
       <article class="opp-card p-3 ${i.status === "Closed" ? "is-closed" : ""}">
         <div class="d-flex justify-content-between align-items-start mb-2">
           <span class="text-muted small">${esc(i.research_area)}</span>
-          <span class="badge ${i.status === "Open" ? "text-bg-success" : "text-bg-secondary"}">${esc(i.status)}</span>
+          <span class="status ${i.status === "Open" ? "status-open" : "status-closed"}">${esc(i.status)}</span>
         </div>
         <h2 class="clamp">${esc(i.title)}</h2>
         <div class="small text-muted mb-2">${esc(i.faculty_name)}, ${esc(i.department)}</div>
@@ -124,7 +137,7 @@ async function showDetails(id) {
     const o = await api(`/${id}`);
     $("detailsTitle").textContent = o.title;
     $("detailsBody").innerHTML = `
-      <p><span class="badge ${o.status === "Open" ? "text-bg-success" : "text-bg-secondary"}">${esc(o.status)}</span></p>
+      <p><span class="status ${o.status === "Open" ? "status-open" : "status-closed"}">${esc(o.status)}</span></p>
       <p>${esc(o.description).replace(/\n/g, "<br>")}</p>
       <dl class="row mb-2">
         <dt class="col-sm-4">Research area</dt><dd class="col-sm-8">${esc(o.research_area)}</dd>
@@ -135,7 +148,7 @@ async function showDetails(id) {
         <dt class="col-sm-4">Required skills</dt><dd class="col-sm-8">${skillTags(o.required_skills)}</dd>
         <dt class="col-sm-4">ID</dt><dd class="col-sm-8">#${o.id}</dd>
       </dl>`;
-    modal("detailsModal").show();
+    panel().show();
   } catch (e) {
     toast(e.message, "danger", e.details);
     load();
@@ -255,5 +268,6 @@ $("oppForm").addEventListener("submit", saveForm);
 $("btnConfirm").addEventListener("click", runConfirm);
 $("search").addEventListener("input", render);
 $("filter").addEventListener("change", render);
+$("areaFilter").addEventListener("change", render);
 
 load();
